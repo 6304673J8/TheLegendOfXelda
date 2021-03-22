@@ -15,7 +15,7 @@ void mainLoop() {
 		new_time = clock() - begin_time;
 		global_delta_time = int(new_time - old_time);
 
-		//Delta Input Update
+		//Engine Input Update
 		sInput->updateEvents();
 
 		//Scene Update and Draw
@@ -25,18 +25,14 @@ void mainLoop() {
 			currentScene->onUpdate();
 			currentScene->onRender();
 		}
-
-		//Pintar Cosas
-
-		//Acaba de pintar cosas
-		//sRenderer->windowRefresh();
 	}
 }
 
+
 int main()
-{
+{	
 	initSingletons();
 	mainLoop();
-	system("Pause");
+	system("pause");
 	return 0;
 }

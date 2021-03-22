@@ -4,30 +4,32 @@
 #include "Utils.h"
 
 class Scene {
-	public:
-		Scene();
-		~Scene();
-	
-		virtual void preLoad();
-		virtual void unLoad(); //Free memory
-		void onLoad();
-		void onUpdate();
-		void onRender();
+public:
+	Scene();
+	~Scene();
 
-		void setLoaded(bool load);
-	protected:
-		virtual void init();
+	virtual void preLoad();
+	virtual void unLoad(); //Liberar memoria sin borrar un puntero
+	void onLoad();
+	void onUpdate();
+	void onRender();
 
-		virtual void updateBegin();
-		virtual void update();
-		virtual void updateEnd();
+	void setLoaded(bool load);
 
-		virtual void renderBegin();
-		virtual void render();
-		virtual void renderEnd();
+protected:
+	virtual void init();
 
-		virtual void renderGUI();
+	virtual void updateBegin();
+	virtual void update();
+	virtual void updateEnd();
 
-		bool mSceneLoaded;
+	virtual void renderBegin();
+	virtual void render();
+	virtual void renderEnd();
+
+	virtual void renderGUI();
+
+	bool mSceneLoaded;
 };
+
 #endif

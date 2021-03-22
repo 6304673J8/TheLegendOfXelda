@@ -7,18 +7,23 @@ Scene::Scene() {
 Scene::~Scene() {
 
 }
+
+
+
 void Scene::onLoad() {
 	if (!mSceneLoaded) {
 		init();
 		setLoaded(true);
 	}
 }
+
 void Scene::onUpdate() {
 	if (!mSceneLoaded) { return; }
 	updateBegin();
 	update();
 	updateEnd();
 }
+
 void Scene::onRender() {
 	if (!mSceneLoaded) { return; }
 	sRenderer->windowClear();
@@ -40,14 +45,37 @@ void Scene::preLoad() {
 }
 
 void Scene::unLoad() {
-	
+
 }
 
-void Scene::init(){}
-void Scene::updateBegin() {}
-void Scene::update() {}
-void Scene::updateEnd() {}
-void Scene::renderBegin() {}
-void Scene::render() {}
-void Scene::renderEnd() {}
-void Scene::renderGUI() {}
+void Scene::init() {
+
+}
+
+void Scene::updateBegin() {
+
+}
+
+void Scene::update() {
+
+}
+
+void Scene::updateEnd() {
+
+}
+
+void Scene::renderBegin() {
+
+}
+
+void Scene::render() {
+
+}
+
+void Scene::renderEnd() {
+
+}
+
+void Scene::renderGUI() {
+
+}

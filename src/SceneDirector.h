@@ -7,7 +7,7 @@
 class SceneDirector {
 	public:
 		enum SceneEnum {
-			MAIN_MENU, GAME, /*GAME_OVER, WIN,...*/
+			MAIN_MENU, GAME, /*GAME_OVER, WIN ...*/
 			LAST_NO_USE
 		};
 		const SceneEnum FIRST_SCENE = SceneDirector::MAIN_MENU;
@@ -23,11 +23,11 @@ class SceneDirector {
 
 	private:
 		void initScenes();
-		static SceneDirector*	instance;
-
-		Scene*					mCurrentScene; //Escena actual
-		std::vector<Scene*>		mScenes; //Todas las escenas
-		std::stack<Scene*>		mSceneHistory; // historial
+		static SceneDirector* instance;
+		
+		Scene* mCurrentScene; //Escena actual
+		std::vector<Scene*> mScenes; //Todas las escenas del juego
+		std::stack<Scene*> mSceneHistory; //Historial para poder volver atrás
 };
 
 #endif

@@ -3,12 +3,14 @@
 
 #include "Scene.h"
 
-class SceneGame: public Scene{
+class SceneGame : public Scene {
 public:
 	SceneGame();
 	~SceneGame();
+
 	virtual void preLoad();
 	virtual void unLoad();
+
 protected:
 	virtual void init();
 
@@ -22,16 +24,16 @@ protected:
 
 	virtual void renderGUI();
 
-	bool mSceneLoaded;
 private:
 	C_Rectangle rect1;
 	C_Rectangle rect2;
-	int			sprite_id;
+	int sprite_id;
 	C_Rectangle sprite_rect;
-	int			sprite_frame;
-	int			sprite_frame_time;
-	int			sprite_x;
-	int			sprite_y;
+	int sprite_frame;
+	int sprite_frame_time;
+	int sprite_x;
+	int sprite_y;
 };
+
 
 #endif

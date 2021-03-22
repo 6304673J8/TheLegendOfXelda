@@ -12,5 +12,4 @@ extern Renderer* sRenderer;
 extern Input* sInput;
 extern ResourceManager* sResManager;
 extern SceneDirector* sDirector;
-
 #endif

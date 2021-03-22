@@ -3,18 +3,20 @@
 
 #include <string>
 #include <vector>
-#include <stack>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
+#include <stack>
 #include "math.h"
 
-#define WINDOW_TITLE "My Zelda"
+#define WINDOW_TITLE "My Awesome Game"
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 540
 
 #define TILE_SIZE 32
+
+enum Direccion{NINGUNO, ARRIBA, ABAJO, IZQUIERDA, DERECHA};
 
 //! Struct C_Rectangle.
 typedef struct { 
@@ -23,6 +25,13 @@ typedef struct {
 	  unsigned int w;
 	  unsigned int h;
 } C_Rectangle;
+
+//! Struct Color
+typedef struct {
+	unsigned char r;
+	unsigned char g;
+	unsigned char b;
+}Color;
 
 //! Struct Point.
 /*! A point in 2D. */
@@ -47,14 +56,6 @@ typedef struct {
 	Point b;
 	Point c;
 } C_Triangle;
-
-//! Struct Color.
-/*! Struct that consists of R G B. */
-typedef struct {
-	unsigned char r;
-	unsigned char g;
-	unsigned char b;
-}Color;
 
 // Tiempo pasado entre frames
 extern unsigned int global_delta_time;

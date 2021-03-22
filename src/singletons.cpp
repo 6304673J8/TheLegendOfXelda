@@ -1,9 +1,9 @@
 #include "singletons.h"
 
-Renderer*			sRenderer = NULL;
-Input*				sInput = NULL;
-ResourceManager*	sResManager = NULL;
-SceneDirector*		sDirector = NULL;
+Renderer* sRenderer = NULL;
+Input* sInput = NULL;
+ResourceManager* sResManager = NULL;
+SceneDirector* sDirector = NULL;
 
 void initSingletons() {
 	sRenderer = Renderer::getInstance();

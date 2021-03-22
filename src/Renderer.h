@@ -5,40 +5,43 @@
 #include <SFML/Graphics.hpp>
 
 class Renderer {
-	public:
-		Renderer();
-		~Renderer();
-	
-		//! Initialize the screen
-		void initWindow();
+public:
+	Renderer();
+	~Renderer();
 
-		//! Clean Window
-		void windowClear();
+	//! Inits the screen
+	void initWindow();
 
-		//! Performs Screen Draw (screen flip)
-		void windowRefresh();
+	//! Clean Window
+	void windowClear();
 
-		//! Window Is Open
-		bool windowIsOpen();
+	//! Perform Screen Draw (screen flip)
+	void windowRefresh();
 
-		//! Rectangle Shape Draw
-		void drawRectangle(C_Rectangle rect, Color col, bool outline);
-		
-		//! Sprite Draw
-		void drawSprite(int ID, int posX, int posY, C_Rectangle rect);
+	//! Returns true if window exists
+	bool windowIsOpen();
 
-		//! Returns the windows pointer
-		sf::RenderWindow* getWindow() { return mWindow; };
+	//! Rectangle Shape draw
+	void drawRectangle(C_Rectangle rect, Color col, bool outline = false);
 
-		void setFramerate(int framerate);
-		//! This class is Singleton
-		static Renderer* getInstance();
+	//! Sprite draw
+	void drawSprite(int ID, int posX, int posY, C_Rectangle rect);
 
-	private:
-		static Renderer* instance;
+	//! Returns the window pointer
+	sf::RenderWindow* getWindow() { return mWindow; };
 
-		sf::RenderWindow*	mWindow;
-		int					mWindowWidth;
-		int					mWindowHeight;
+	//! Limit Framerate
+	void setFramerate(int framerate);
+
+	//! This Class is Singleton
+	static Renderer* getInstance();
+
+private:
+	static Renderer* instance;
+
+	sf::RenderWindow* mWindow;
+	int mWindowWidth;
+	int mWindowHeight;
 };
+
 #endif
