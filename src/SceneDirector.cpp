@@ -1,6 +1,6 @@
 #include "SceneDirector.h"
 
-//Include scenes of game
+//Include Scenes of game
 #include "SceneMenu.h"
 #include "SceneGame.h"
 //#include "SceneGameOver.h
@@ -15,15 +15,15 @@ SceneDirector* SceneDirector::getInstance() {
 }
 
 SceneDirector::SceneDirector() {
+	if (instance != NULL) { return; }
+	initScenes();
+}
+
+SceneDirector::~SceneDirector() {
 
 }
 
-SceneDirector::~SceneDirector()
-{
-}
-
-void SceneDirector::initScenes()
-{
+void SceneDirector::initScenes() {
 	mScenes.resize(LAST_NO_USE);
 
 	SceneMenu* scene_menu = new SceneMenu();
@@ -42,6 +42,7 @@ void SceneDirector::initScenes()
 void SceneDirector::changeScene(SceneEnum next_scene, bool load_on_return, bool history) {
 	if (load_on_return) { mCurrentScene->unLoad(); }
 	mCurrentScene->setLoaded(!load_on_return);
+	mCurrentScene->leaveScene();
 	if (history) {
 		mSceneHistory.push(mCurrentScene);
 	}
@@ -54,6 +55,7 @@ void SceneDirector::goBack(bool load_on_return) {
 	if (prevScene != NULL) {
 		mSceneHistory.pop();
 		mCurrentScene->setLoaded(!load_on_return);
+		mCurrentScene->leaveScene();
 		mCurrentScene = prevScene;
 	}
 }

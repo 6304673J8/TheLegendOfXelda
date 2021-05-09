@@ -15,9 +15,11 @@ public:
 	void onRender();
 
 	void setLoaded(bool load);
+	void leaveScene();
 
 protected:
 	virtual void init();
+	virtual void enterScene();
 
 	virtual void updateBegin();
 	virtual void update();
@@ -30,6 +32,7 @@ protected:
 	virtual void renderGUI();
 
 	bool mSceneLoaded;
+	bool mSceneEntered;
 };
 
 #endif

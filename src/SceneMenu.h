@@ -5,13 +5,16 @@
 
 class SceneMenu : public Scene {
 public:
+	enum MenuOptions{CONTINUE, NEW_GAME, EXIT};
 	SceneMenu();
 	~SceneMenu();
 
 	virtual void preLoad();
+	virtual void unLoad();
 
 protected:
 	virtual void init();
+	virtual void enterScene();
 
 	virtual void updateBegin();
 	virtual void update();
@@ -24,12 +27,13 @@ protected:
 	virtual void renderGUI();
 
 private:
-	C_Rectangle rect1;
-	C_Rectangle rect2;
-	int sprite_id;
-	C_Rectangle sprite_rect;
-	int sprite_frame;
-	int sprite_frame_time;
+	int menu_img_id;
+	C_Rectangle menu_img_rect;
+
+	int mMenuOption;
+	C_Rectangle mOptionSelector;
+
+	int currSound;
 };
 
 

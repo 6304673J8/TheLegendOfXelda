@@ -13,6 +13,7 @@ Input::Input() {
 	if (instance != NULL) { return; }
 	mWindow = NULL;
 }
+
 Input::~Input() {
 
 }
@@ -115,7 +116,6 @@ Input::KeyboardKeys Input::getKeyCode(sf::Keyboard::Key key) {
 	return ret_key;
 }
 
-
 void Input::keyPressedEvent(sf::Keyboard::Key key) {
 	Input::KeyboardKeys pressed_key = getKeyCode(key);
 	if (pressed_key != LAST_NO_USE) {
@@ -140,10 +140,12 @@ bool Input::isKeyPressed(KeyboardKeys key) {
 	if (key < 0 || key >= LAST_NO_USE) { return false; }
 	return key_pressed[key];
 }
+
 bool Input::isKeyDown(KeyboardKeys key) {
 	if (key < 0 || key >= LAST_NO_USE) { return false; }
 	return key_down[key];
 }
+
 bool Input::isKeyReleased(KeyboardKeys key) {
 	if (key < 0 || key >= LAST_NO_USE) { return false; }
 	return key_released[key];

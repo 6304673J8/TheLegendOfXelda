@@ -3,11 +3,12 @@
 
 #include <string>
 #include <vector>
+#include <stack>
+#include <map>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
-#include <stack>
 #include "math.h"
 
 #define WINDOW_TITLE "My Awesome Game"
@@ -15,8 +16,6 @@
 #define SCREEN_HEIGHT 540
 
 #define TILE_SIZE 32
-
-enum Direccion{NINGUNO, ARRIBA, ABAJO, IZQUIERDA, DERECHA};
 
 //! Struct C_Rectangle.
 typedef struct { 

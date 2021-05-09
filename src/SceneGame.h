@@ -13,6 +13,7 @@ public:
 
 protected:
 	virtual void init();
+	virtual void enterScene();
 
 	virtual void updateBegin();
 	virtual void update();

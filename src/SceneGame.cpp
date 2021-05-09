@@ -1,6 +1,5 @@
 #include "SceneGame.h"
 #include "singletons.h"
-
 SceneGame::SceneGame() : Scene() {
 
 }
@@ -19,7 +18,7 @@ void SceneGame::unLoad() {
 
 void SceneGame::init() {
 	sprite_id = sResManager->getSpriteID("assets/sanic.png");
-	sprite_rect = C_Rectangle{ 0,0,78,82 };
+	sprite_rect = C_Rectangle{ 0, 0, 78, 82 };
 	sprite_frame = 0;
 	sprite_frame_time = 0;
 	rect2 = C_Rectangle{ 0, 0, sResManager->getSpriteWidth(sprite_id), 
@@ -27,6 +26,10 @@ void SceneGame::init() {
 	
 	sprite_x = 50;
 	sprite_y = 50;
+}
+
+void SceneGame::enterScene() {
+
 }
 
 void SceneGame::updateBegin() {
