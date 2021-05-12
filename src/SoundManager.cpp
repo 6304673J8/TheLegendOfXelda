@@ -39,7 +39,7 @@ int SoundManager::playSound(const char* filepath, bool loop) {
 	mSoundVector[soundID] = new sf::Sound();
 	mSoundVector[soundID]->setBuffer(*buffer);
 	mSoundVector[soundID]->play();
-	mSoundVector[soundID]->setLoop(loop);
+	//mSoundVector[soundID]->setLoop(loop); Checkear el vídeo 
 	updateSoundFirstFreeSlot();
 	return soundID;
 }
