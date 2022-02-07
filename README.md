@@ -1,2 +1,2 @@
 # TheLegendOfXelda
-Custom Engine made with SFML
+Developing a Simple Game With A Custom Engine. Made with SFML.
